@@ -24,7 +24,9 @@ app.use("/files", express.static("public"));
 app.get("/home", (req, res) => {
     res.render("index");
 });
-
+app.get("/", (req, res) => {
+    res.redirect("/home");
+})
 http.listen(3000, () => {
     console.log("the app is run in port 3000!");
 });
